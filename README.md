@@ -1,7 +1,7 @@
 # mg.bot
 Ten skrypt dla Tampermonkey automatycznie podchodzi i atakuje wybrane potwory na nowym interfejsie Margonem (NI).
 
-Po wykryciu skrypt emituje zdarzenia myszy na odpowiedni kafel na "<canvas id="GAME_CANVAS">", kierując postać w stronę moba.
+Po wykryciu skrypt emituje zdarzenia myszy na odpowiedni kafel na <canvas id/="GAME_CANVAS">, kierując postać w stronę moba.
 
 Gdy odległość między bohaterem a mobject jest mniejsza niż CLICK_OFFSET, następuje klik ppm, rozpoczynający atak.
 
