@@ -14,7 +14,7 @@
   if (!window.Engine || !Engine.hero || !Engine.npcs || !Engine.map) return;
 
   // ——— CONFIG ———
-  const TARGET_IDS     = ['62345','169841','170535','62359','160694'];
+  const TARGET_IDS     = ['62345'];
   const SCAN_INTERVAL  = 1000;
   const QUICK_INTERVAL = 2000;
   const Q_INTERVAL     = 5000;
