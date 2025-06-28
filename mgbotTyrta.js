@@ -15,20 +15,20 @@
   if (!window.Engine || !Engine.hero || !Engine.npcs || !Engine.map) return;
 
   // ——— CONFIG ———
-  const TARGET_IDS     = ['160694']; // ← add additional mob IDs here
-  const SCAN_INTERVAL  = 2000;       // ms between iterations
-  const CLICK_OFFSET   = 1;          // distance in world tiles
-  const TILE_PX        = 32;         // tile size in px on NI map
-  const QUICK_INTERVAL = 1000;       // ms between quick battle clicks
+  const TARGET_IDS     = ['160694']; // mob id
+  const SCAN_INTERVAL  = 2000;       /
+  const CLICK_OFFSET   = 1;          
+  const TILE_PX        = 32;         
+  const QUICK_INTERVAL = 1000;       // delay
   // ————————————
 
-  // Retrieve hero position from Engine.hero.d
+  // cords
   function getHero(){
     const h = Engine.hero.d;
     return { x: h.x, y: h.y };
   }
 
-  // Retrieve all NPCs on the current map (Engine.npcs.check())
+// npc cords
   function getNPCs(){
     const raw = Engine.npcs.check()||{};
     const out = {};
@@ -40,7 +40,7 @@
     return out;
   }
 
-  // Right-click on the center of tile [mx,my] on GAME_CANVAS
+  // right click
   function clickAtTile(mx,my){
     const c = document.getElementById('GAME_CANVAS');
     if(!c) return;
@@ -48,13 +48,13 @@
     // map size in px
     const mapWpx = Engine.map.size.x * TILE_PX;
     const mapHpx = Engine.map.size.y * TILE_PX;
-    // calculate margins inside canvas (map may be centered)
+    // calculate margins inside canvas
     const marginX = (r.width  - mapWpx)/2;
     const marginY = (r.height - mapHpx)/2;
     const px = r.left + marginX + mx*TILE_PX + TILE_PX/2;
     const py = r.top  + marginY + my*TILE_PX + TILE_PX/2;
     if (!isFinite(px)||!isFinite(py)) return;
-    // emit only right-click events (button:2 + contextmenu)
+    
     ['mousedown','mouseup','contextmenu'].forEach(type=>{
       c.dispatchEvent(new MouseEvent(type,{
         view: window,
@@ -68,7 +68,6 @@
     });
   }
 
-  // Main loop: every SCAN_INTERVAL ms
   function loop(){
     const hero = getHero();
     const npcs  = getNPCs();
@@ -76,7 +75,7 @@
     for(const id of TARGET_IDS){
       const mob = npcs[id];
       if (!mob) continue;
-      // always right-click the correct tile, regardless of distance
+   
       clickAtTile(mob.x, mob.y);
     }
   }
