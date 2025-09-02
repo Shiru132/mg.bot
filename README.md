@@ -5,8 +5,8 @@ Po wykryciu skrypt emituje zdarzenia myszy na odpowiedni kafel na <canvas id/="G
 
 Gdy odległość między bohaterem a mobject jest mniejsza niż CLICK_OFFSET, następuje klik ppm, rozpoczynający atak.
 
-Wszystkie interesujące ID mobów dodajesz do tablicy TARGET_IDS w sekcji konfiguracji.
+Wszystkie ID mobów które chcesz dodajesz do tablicy TARGET_IDS w sekcji konfiguracji.
 
-Rozmiar kafla i częstotliwość skanowania można dostosować przez stałe TILE_PX i SCAN_INTERVAL.
+Rozmiar kafla i częstotliwość skanowania można dostosować przez TILE_PX i SCAN_INTERVAL.
 
-Działa wyłącznie na nowym interfejsie gry i wymaga obecności obiektów Engine.hero, Engine.npcs oraz Engine.map.
+Działa wyłącznie na nowym interfejsie gry.
