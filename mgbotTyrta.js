@@ -11,7 +11,7 @@
 
 (function(){
   'use strict';
-  // If New Interface is not present → do nothing
+ 
   if (!window.Engine || !Engine.hero || !Engine.npcs || !Engine.map) return;
 
   // ——— CONFIG ———
@@ -82,7 +82,7 @@
 
   setInterval(loop, SCAN_INTERVAL);
 
-  // Automatic clicking of "quick battle" button
+  // automatic clicking of "quick battle" button
   setInterval(()=>{
     const qb = document.querySelector('#autobattleButton');
     if (qb) qb.click();
