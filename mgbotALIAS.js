@@ -2,7 +2,7 @@
 // @name         Margonem NI Auto Attacker + Quick Battle + Q Key (right+left click, offset fix v1.9.1)
 // @namespace    http://tampermonkey.net/
 // @version      1.9.1
-// @description  Attacks mobs NI with alternating right/left click + quick battle + presses 'q' every 5s; click a bit higher when approaching from below
+// @description  Attacks mobs NI 
 // @match        http*://*.margonem.pl/*
 // @match        http*://*.margonem.com/*
 // @grant        none
@@ -21,7 +21,7 @@
   // ————————————
 
   let currentTargetIndex = 0;
-  let clickToggle = false; // toggle between left and right
+  let clickToggle = false; 
 
   function getNPCs(){
     const raw = Engine.npcs.check()||{};
